@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.helloworld.recyclerview.RecyclerViewActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button mBtnTextView;
@@ -16,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnRadioButton;
     private Button mBtnCheckBox;
     private Button mBtnImageView;
+    private Button mBtnRv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnRadioButton = findViewById(R.id.btn_radiobutton);
         mBtnCheckBox = findViewById(R.id.btn_checkbox);
         mBtnImageView = findViewById(R.id.btn_imageview);
+        mBtnRv = findViewById(R.id.btn_recyclerview);
         setListeners();
     }
     // 设置监听事件接口
@@ -38,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnRadioButton.setOnClickListener(onClick);
         mBtnCheckBox.setOnClickListener(onClick);
         mBtnImageView.setOnClickListener(onClick);
+        mBtnRv.setOnClickListener(onClick);
     }
 
     // 写一个class实现onClick的接口
@@ -72,6 +77,9 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.btn_imageview:
                     // 跳转到ImageView演示界面
                     intent = new Intent(MainActivity.this, ImageViewActivity.class);
+                case R.id.btn_recyclerview:
+                    // 跳转到RecylerView演示界面
+                    intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
 
             }
             startActivity(intent);
